@@ -325,7 +325,7 @@ local function Image(config)
                     ))
 					end
                 end
-                
+              end
             end
         else
             for now, x1, y1, x2, y2 in from_to(starts, ends) do
