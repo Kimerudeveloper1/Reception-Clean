@@ -283,16 +283,6 @@ local function TileChild(config)
     end
 end
 
-local kenburns_shader = resource.create_shader[[
-    uniform sampler2D Texture;
-    varying vec2 TexCoord;
-    uniform vec4 Color;
-    uniform float x, y, s;
-    void main() {
-        gl_FragColor = texture2D(Texture, TexCoord * vec2(s, s) + vec2(x, y)) * Color;
-    }
-]]
-
 local function Image(config)
     -- config:
     --   asset_name: 'foo.jpg'
