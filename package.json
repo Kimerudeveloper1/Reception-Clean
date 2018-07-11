@@ -1,9 +1,9 @@
 {
-    "name": "Reception Screen (modified)",
-    "author": "Florian Wesch <fw@info-beamer.com>",
+    "name": "Reception Clean",
+    "author": "Noah Gillard <noah.gillard@telenet.be>",
     "desc": "Shows textual/image and video information for a reception-style information screen.",
-    "repository": "https://github.com/tioma18/tick",
-    "version": "0.3",
+    "repository": "https://github.com/Kimerudeveloper1/Receptions-Clean",
+    "version": "0.1",
 	"runtime": {
 		"antialias": true
 	}
