@@ -296,7 +296,7 @@ local kenburns_shader = resource.create_shader[[
 local function Image(config)
     -- config:
     --   asset_name: 'foo.jpg'
-    --   kenburns: true/false
+       kenburns: false
     --   fade_time: 0-1
     --   fit: true/false
 	--   transparent: true/false
