@@ -283,7 +283,7 @@ local function TileChild(config)
     end
 end
 
-local kenburns_shader {
+local kenburns_shader
     uniform sampler2D Texture;
     varying vec2 TexCoord;
     uniform vec4 Color;
