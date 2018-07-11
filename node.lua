@@ -286,7 +286,7 @@ end
 local function Image(config)
     -- config:
     --   asset_name: 'foo.jpg'
-    --   kenburns: true/false
+    
     --   fade_time: 0-1
     --   fit: true/false
 	--   transparent: true/false
@@ -299,25 +299,6 @@ local function Image(config)
 
         local fade_time = config.fade_time or 0.5
 
-        if config.kenburns then
-            local function lerp(s, e, t)
-                return s + t * (e-s)
-            end
-
-            local paths = {
-                {from = {x=0.0, y=0.0, s=1.0}, to = {x=0.0, y=0.0, s=0.9}},
-				{from = {x=0.0, y=0.0, s=1.0}, to = {x=0.1, y=0.1, s=0.9}},
-				{from = {x=0.0, y=0.0, s=1.0}, to = {x=0.1, y=0.0, s=0.9}},
-				{from = {x=0.0, y=0.0, s=1.0}, to = {x=0.0, y=0.1, s=0.9}},
-            }
-
-            local path = paths[math.random(1, #paths)]
-
-            local to, from = path.to, path.from
-            if math.random() >= 0.5 then
-                to, from = from, to
-            end
-
             local w, h = img:size()
             local duration = ends - starts
             local linear = easing.linear
@@ -326,13 +307,7 @@ local function Image(config)
                 return s + t * (e-s)
             end
 
-            for now, x1, y1, x2, y2 in from_to(starts, ends) do			
-                local t = (now - starts) / duration
-                kenburns_shader:use{
-                    x = lerp(from.x, to.x, t);
-                    y = lerp(from.y, to.y, t);
-                    s = lerp(from.s, to.s, t);
-                }
+            
                 if config.fit then
 					if config.transparent then
 						util.draw_correct(img, x1, y1, x2, y2, 0.5)
@@ -350,7 +325,7 @@ local function Image(config)
                     ))
 					end
                 end
-                kenburns_shader:deactivate()
+                
             end
         else
             for now, x1, y1, x2, y2 in from_to(starts, ends) do
