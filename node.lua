@@ -452,19 +452,6 @@ local function Flat(config)
     end
 end
 
-local function TimeTile(config)
-    return function(starts, ends)
-        local font = config.font
-        local r, g, b = config.r, config.g, config.b
-        for now, x1, y1, x2, y2 in from_to(starts, ends) do
-            local size = y2 - y1
-            local time = clock.human()
-            local w = font:width(time, size)
-            local offset = ((x2 - x1) - w) / 2
-            config.font:write(x1+offset,  y1+config.y, time, size, r,g,b,1)
-        end
-    end
-end
 
 local function Markup(config)
     local text = config.text
