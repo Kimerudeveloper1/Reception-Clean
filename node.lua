@@ -1,4 +1,4 @@
-
+gl.setup(NATIVE_WIDTH, NATIVE_HEIGHT)
 
 node.alias "*" -- catch all communication
 
