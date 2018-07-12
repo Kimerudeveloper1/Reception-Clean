@@ -77,7 +77,7 @@ local function draw_scroller(x, y, w, h, parent_config)
 
     while x < WIDTH do
         if idx > #items then
-            local ok, item = pcall(feed)
+            local ok, item = pcall(rss())
             if ok and item then
                 items[#items+1] = {
                     text = item.text .. "    -    ",
