@@ -1,9 +1,9 @@
 local api, CHILDS, CONTENTS = ...
 
 local json = require "json"
---[[local py = require "python"--]]
+local py = require "python"
 local scissors = sys.get_ext "scissors"
---[[rss = py.import "rss".rss]]--
+rss = feed.import "rss".rss
 
 local font
 local color
