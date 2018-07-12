@@ -31,7 +31,7 @@ local function mix_content()
     return out
 end
 
-local feed = rss()--[[util.generator(mix_content).next]]--
+local feed = util.generator(mix_content).next
 
 api.add_listener("scroller", function(tile, value)
     print("got new scroller content from " .. tile)
