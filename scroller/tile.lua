@@ -88,7 +88,7 @@ local function draw_scroller(x, y, w, h, parent_config)
             else
                 print "no scroller item. showing blanks"
                 items[#items+1] = {
-                    text = "                      ",
+                    text = rss(),
                 }
             end
         end
