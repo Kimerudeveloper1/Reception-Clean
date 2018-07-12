@@ -1,9 +1,9 @@
 local api, CHILDS, CONTENTS = ...
 
 local json = require "json"
-local py = require "python"
+--[[local py = require "python"--]]
 local scissors = sys.get_ext "scissors"
-rss = py.import "rss".rss
+--[[rss = py.import "rss".rss]]--
 
 local font
 local color
@@ -88,7 +88,7 @@ local function draw_scroller(x, y, w, h, parent_config)
             else
                 print "no scroller item. showing blanks"
                 items[#items+1] = {
-                    text = " rss()                     ",
+                    text = "                      ",
                 }
             end
         end
