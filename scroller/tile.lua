@@ -80,7 +80,7 @@ local function draw_scroller(x, y, w, h, parent_config)
             local ok, item = pcall(feed)
             if ok and item then
                 items[#items+1] = {
-                    text = rss() .. "    -    ",
+                    text = item.text .. "    -    ",
                     image = prepare_image(item.image)
                 }
             else
