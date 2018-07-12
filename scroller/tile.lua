@@ -31,7 +31,7 @@ local function mix_content()
     return out
 end
 
-local feed = util.generator(mix_content).next
+local feed = rss()--[[util.generator(mix_content).next]]--
 
 api.add_listener("scroller", function(tile, value)
     print("got new scroller content from " .. tile)
@@ -77,7 +77,7 @@ local function draw_scroller(x, y, w, h, parent_config)
 
     while x < WIDTH do
         if idx > #items then
-            local ok, item = pcall(rss())
+            local ok, item = pcall(feed)
             if ok and item then
                 items[#items+1] = {
                     text = item.text .. "    -    ",
